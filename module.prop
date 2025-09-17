@@ -3,4 +3,4 @@ name=Battery Protection Enabler for Older Qualcomm-based Xiaomi
 version=v1
 versionCode=1
 author=manleyevangelista
-description=A Magisk module that brings "Battery Protection" on older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%.
+description=A Magisk module that brings "Battery Protection" to older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%.
