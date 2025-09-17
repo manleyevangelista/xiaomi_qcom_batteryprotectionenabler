@@ -2,7 +2,7 @@
 
 **WARNING**: While this mod shoudn't harm your device, I am still not responsible if anything happens to it while using this module. **USE AT YOUR OWN RISK**.
 
-A Magisk module that brings "Battery Protection" on older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app. This mod aims to fix that.
+A Magisk module that brings "Battery Protection" on older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This mod aims to fix that.
 
 This should work on devices with Snapdragon 865 and newer.
 
