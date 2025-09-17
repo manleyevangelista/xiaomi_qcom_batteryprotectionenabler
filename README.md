@@ -4,7 +4,7 @@
 
 <img src="https://github.com/manleyevangelista/xiaomi_qcom_batteryprotectionenabler/blob/main/images/BatteryProtectionSettings.jpg" style="width:400px;">
 
-A Magisk module that brings "Battery Protection" on older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This mod aims to fix that.
+A Magisk module that brings "Battery Protection" to older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This module aims to fix that.
 
 This should work on devices with Snapdragon 865 and newer.
 
@@ -15,7 +15,7 @@ Simply download the .zip file under the `Releases` section and flash it using Ma
 To turn this off, go to `Modules` section in **Magisk** and turn it off. Same thing in reverse to turn it on.
 
 ## Why do I need this? Many custom ROMs already have this feature.
-Some may want this under MIUI or HyperOS-based ROMs (includes both stock and xiaomi.eu builds).
+Some may want this functionality under MIUI or HyperOS-based ROMs (includes both stock and xiaomi.eu builds).
 
 Also, on AOSP-based custom ROMs, they use the `input_select` node to limit charging. It does work, but it comes with a caveat: once the specified limit is reached, it produces wakelocks, which drain the battery while the charger is still connected.  Meanwhile, this module uses the `night_charging` node, which works differently. When it hits 80%, instead of letting the battery drain or charge, it draws power directly from the charger—keeping the battery topped at 80%. 
 
