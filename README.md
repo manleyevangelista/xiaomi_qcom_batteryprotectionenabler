@@ -1,10 +1,10 @@
-# Battery Protection Enabler for Older Qualcomm-based Xiaomi Phones/Tablets
+# Battery Protection Enabler for Older Qualcomm-based Xiaomi Phones and Tablets
 
 **WARNING**: While this mod shoudn't harm your device, I am still not responsible if anything happens to it while using this module. **USE AT YOUR OWN RISK**.
 
 <img src="https://github.com/manleyevangelista/xiaomi_qcom_batteryprotectionenabler/blob/main/images/BatteryProtectionSettings.jpg" style="width:400px;">
 
-This Magisk module backports "Battery Protection" to older Qualcomm-based Xiaomi/Redmi/POCO phones/tablets, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This module aims to fix that.
+This Magisk module backports "Battery Protection" to older Qualcomm-based Xiaomi/Redmi/POCO phones and tablets, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This module aims to fix that.
 
 This should work on devices with Snapdragon 865 and newer.
 
