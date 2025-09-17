@@ -1,25 +1,22 @@
-# Battery Charge Limit for Qualcomm-based Xiaomi/Redmi/POCO Devices
+# Battery Protection for Older Qualcomm-based Xiaomi/Redmi/POCO Devices
 
 **WARNING**: While this mod shoudn't harm your device, I am still not responsible if anything happens to it while using this module. **USE AT YOUR OWN RISK**.
 
-A Magisk module that limits battery charging to 80% on Xiaomi phones that don’t already have this option in Settings (such as the Poco F5, F5 Pro, and F6 Pro). It works on any Qualcomm-based Xiaomi/Redmi/POCO phone with a Snapdragon 865 or newer chipset. 
+A Magisk module that brings "Battery Protection" on older Xiaomi/Redmi/POCO devices, that do not already have the option in the Settings app. This limits battery charging to 80%. The setting to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app. This mod aims to fix that.
 
-The setting to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app. This mod aims to fix that.
+This should work on devices with Snapdragon 865 and newer.
 
 ## Installation
 Simply download the .zip file under the `Releases` section and flash it using Magisk. **DO NOT FLASH THIS IN CUSTOM RECOVERY.**
 
 ## Why do I need this? Many custom ROMs already have this feature.
-First of all, older phones (Poco F6 Pro, Poco F5, and older) don’t have the option in Settings to turn this on in MIUI/HyperOS stock ROM. This module enables it.  
+Some may want this under MIUI or HyperOS-based ROMs (includes both stock and xiaomi.eu builds).
 
-Also, on custom ROMs, they use the `input_select` node to limit charging. It does work, but it comes with a caveat: once the specified limit is reached, it produces wakelocks, which drain the battery while the charger is still connected.  
-
-Meanwhile, this module uses the `night_charging` node, which works differently. When it hits 80%, instead of letting the battery drain or charge, it draws power directly from the charger—keeping the battery topped at 80%. 
+Also, on AOSP-based custom ROMs, they use the `input_select` node to limit charging. It does work, but it comes with a caveat: once the specified limit is reached, it produces wakelocks, which drain the battery while the charger is still connected.  Meanwhile, this module uses the `night_charging` node, which works differently. When it hits 80%, instead of letting the battery drain or charge, it draws power directly from the charger—keeping the battery topped at 80%. 
 
 ## Troubleshooting
 **Problem**:  
 My battery still charges past 80%.
-
 
 **Troubleshooting steps**:
 
