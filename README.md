@@ -1,4 +1,4 @@
-# Battery Protection Enabler for Older Qualcomm-based Xiaomi Phones and Tablets
+# Battery Protection Enabler for Older Qualcomm-based Xiaomi/Redmi/POCO Phones and Tablets
 
 **WARNING**: While this mod shoudn't harm your device, I am still not responsible if anything happens to it while using this module. **USE AT YOUR OWN RISK**.
 
