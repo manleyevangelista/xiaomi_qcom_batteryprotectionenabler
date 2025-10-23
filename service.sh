@@ -1,13 +1,18 @@
 #!/system/bin/sh
+# Looks for the "night_charging" ($TARGET) file. The script runs continuously until the file is found.
+# If the file ($TARGET) is not found, the script pauses for 5 seconds before searching again.
+# After it is found ($TARGET), the script pauses for 10 seconds before continuing to the next step.
+until [ -f /sys/class/qcom-battery/night_charging ]; do
+    sleep 5
+done
+sleep 10
 
-# This script is delayed by 30 seconds. Without this, permission changes won’t persist.
-sleep 30
-
-# Sysfs node that enables 'battery charge limit'.
 TARGET="/sys/class/qcom-battery/night_charging"
 
-# Enables 'night_charging', which limits battery to 80%.
-echo "1" > $TARGET
-
-# Sets permission to read-only for all users and groups, this prevents the system from changing the value. Which will disable 'night_charging'.
-chmod 444 $TARGET
+# Writes "1" to the $TARGET every minute to keep "night_charging" active.
+while true; do
+    if [ -f "$TARGET" ]; then
+        echo 1 > "$TARGET"
+    fi
+    sleep 60    # refresh every 1 minute (60 seconds)
+done &
