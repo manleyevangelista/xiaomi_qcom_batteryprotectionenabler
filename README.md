@@ -12,7 +12,7 @@ This should work on devices with Snapdragon 865 and newer.
 Simply download the .zip file under the `Releases` section and flash it using Magisk/KernelSU/KSU Next. **DO NOT FLASH THIS IN CUSTOM RECOVERY.**
 
 ## How to toggle this on/off?
-To turn this off, go to `Modules` section in **Magisk/KernelSU/KSU Next** and turn it off. Same thing in reverse to turn it on.
+To turn this off, go to `Modules` section in **Magisk/KernelSU/KSU Next** and turn it off. Then reboot. Same thing in reverse to turn it on.
 
 ## Why do I need this? Many custom ROMs already have this feature.
 Some may want this functionality under MIUI or HyperOS-based ROMs (includes both stock and xiaomi.eu builds).
