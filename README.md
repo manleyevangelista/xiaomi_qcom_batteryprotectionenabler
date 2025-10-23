@@ -4,15 +4,15 @@
 
 <img src="https://github.com/manleyevangelista/xiaomi_qcom_batteryprotectionenabler/blob/main/images/BatteryProtectionSettings.jpg" style="width:400px;">
 
-This Magisk module backports "Battery Protection" to older Qualcomm-based Xiaomi/Redmi/POCO phones and tablets, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This module aims to fix that.
+This Magisk/KernelSU/KSU Next module backports "Battery Protection" to older Qualcomm-based Xiaomi/Redmi/POCO phones and tablets, that do not already have the option in the Settings app. This limits battery charging to 80%. Everything required to turn this on is already available under the hood—it’s just that for some reason, Xiaomi/Redmi/POCO didn’t make it available in the Settings app (on Poco F5 and older). This module aims to fix that.
 
 This should work on devices with Snapdragon 865 and newer.
 
 ## Installation
-Simply download the .zip file under the `Releases` section and flash it using Magisk. **DO NOT FLASH THIS IN CUSTOM RECOVERY.**
+Simply download the .zip file under the `Releases` section and flash it using Magisk/KernelSU/KSU Next. **DO NOT FLASH THIS IN CUSTOM RECOVERY.**
 
 ## How to toggle this on/off?
-To turn this off, go to `Modules` section in **Magisk** and turn it off. Same thing in reverse to turn it on.
+To turn this off, go to `Modules` section in **Magisk/KernelSU/KSU Next** and turn it off. Same thing in reverse to turn it on.
 
 ## Why do I need this? Many custom ROMs already have this feature.
 Some may want this functionality under MIUI or HyperOS-based ROMs (includes both stock and xiaomi.eu builds).
@@ -37,21 +37,16 @@ If the file exists, continue typing these commands below:
 
 ```
 su
-cat -l /sys/class/qcom-battery/night_charging && ls -l /sys/class/qcom-battery/night_charging
+cat /sys/class/qcom-battery/night_charging
 ```
 
 
-These are the output you should expect:
+These is the output you should expect:
 ```
 1
--r--r--r-- 1 system system 4096 2025-09-17 20:14 /sys/class/qcom-battery/night_charging
 ```
-
-**Note**: Date and time may differ, but the rest should be the same.
 
 ### What does the output mean?
 
 `1` means the `/sys/class/qcom-battery/night_charging` is turned on. If the value is `0`, then it is off and charge limit wont work.
-
-`-r--r--r--` means that the `/sys/class/qcom-battery/night_charging` is read-only for all users and groups, which prevents the system from reverting the value. If the value starts with `-rw-rw----`, then may not work since it will get reverted.
 
