@@ -57,3 +57,6 @@ You should see the live value change as the condition change (eg. when the batte
 
 `1` means the `/sys/class/qcom-battery/night_charging` is turned on. If the value is `0`, then it is off and charge limit wont work.
 
+## To Developers
+
+You may freely use this script to integrate this feature in your ROMs. When you do so, please don't forget to credit me. Thanks.
