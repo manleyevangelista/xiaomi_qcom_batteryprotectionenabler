@@ -1,18 +1,43 @@
 #!/system/bin/sh
-# Looks for the "night_charging" ($TARGET) file. The script runs continuously until the file is found.
-# If the file ($TARGET) is not found, the script pauses for 5 seconds before searching again.
-# After it is found ($TARGET), the script pauses for 10 seconds before continuing to the next step.
-until [ -f /sys/class/qcom-battery/night_charging ]; do
+# Path to Xiaomi's 'night_charging' control node.
+NIGHT_CHARGING="/sys/class/qcom-battery/night_charging"
+# Battery status node (works across all power sources).
+BAT_STATUS="/sys/class/power_supply/battery/status"
+# Battery capacity node (used to check current charge %).
+BAT_CAPACITY="/sys/class/power_supply/battery/capacity"
+
+# Wait until the "night_charging" node exists.
+until [ -f "$NIGHT_CHARGING" ]; do
     sleep 5
 done
-sleep 10
 
-TARGET="/sys/class/qcom-battery/night_charging"
+# Exit if not found (device not compatible).
+[ ! -f "$NIGHT_CHARGING" ] && exit 1
 
-# Writes "1" to the $TARGET every minute to keep "night_charging" active.
+PREV_STATUS=""
+
 while true; do
-    if [ -f "$TARGET" ]; then
-        echo 1 > "$TARGET"
+    STATUS=$(cat "$BAT_STATUS" 2>/dev/null)
+    CAPACITY=$(cat "$BAT_CAPACITY" 2>/dev/null)
+
+    # React instantly to plug/unplug.
+    if [ "$STATUS" != "$PREV_STATUS" ]; then
+        if [ "$STATUS" = "Charging" ]; then
+            echo "NIGHT_CHARGING: NOT ACTIVATED YET - Plugged in; waiting for 80%."
+        else
+            echo 0 > "$NIGHT_CHARGING"
+            echo "NIGHT_CHARGING: DEACTIVATED - Unplugged or not charging."
+        fi
     fi
-    sleep 60    # refresh every 1 minute (60 seconds)
+
+    # Enable night charging only once the battery hits 80% while charging.
+    if [ "$STATUS" = "Charging" ] && [ "$CAPACITY" -ge 80 ]; then
+        echo 1 > "$NIGHT_CHARGING"
+        echo "NIGHT_CHARGING: ACTIVATED - Battery is 80% or greater."
+    else
+        echo 0 > "$NIGHT_CHARGING"
+    fi
+
+    PREV_STATUS="$STATUS"
+    sleep 5
 done &
