@@ -43,12 +43,12 @@ watch -n 1 cat /sys/class/qcom-battery/night_charging
 
 If unplugged or, not charging, or charging but the battery is below 80%, this is the value to be expected.
 ```
-`0`
+0
 ```
 
 If it's charging, and the battery is 80% or above, this is the value to be expected.
 ```
-`1`
+1
 ```
 
 You should see the live value change as the condition change (eg. when the battery goes from 79 to 80%, when the phone is unplugged/plugged in, etc).
