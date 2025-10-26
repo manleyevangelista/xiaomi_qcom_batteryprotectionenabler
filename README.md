@@ -41,7 +41,7 @@ watch -n 1 cat /sys/class/qcom-battery/night_charging
 ```
 
 
-If unplugged or, not charging, or charging but the battery is below 80%, this is the value to be expected.
+If unplugged, not charging, or charging but the battery is below 80%, this is the value to be expected.
 ```
 0
 ```
