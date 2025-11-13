@@ -1,0 +1,6 @@
+id=xiaomi_batteryprotection_pseudo_backport_qcom
+name=Xiaomi Battery Protection Pseudo-Backport (Qualcomm)
+version=v1
+versionCode=1
+author=manleyevangelista
+description=This backports "Battery Protection" to older Qualcomm-based Xiaomi/Redmi/POCO phones and tablets, that do not already have the option in the Settings app. This limits battery charging to 80%.
